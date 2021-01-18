@@ -11,7 +11,13 @@ int main()
 {
   pairwiseAlignmentNW align;
   align.import_score_matrix("data\\substitution_matrices\\NUC44");
+  align.import_sequences("data\\query\\msa.fasta");
   align.print_scoring_matrix();
-  cout << align.comparison_score('A', 'A') ;
+  align.print_sequences();
+  align.gaps_load(10, 0.1);
+  align.needleman_wunsch(1, 2);
+  align.print_matrices();
+  align.print_sequences();
+
   return 0;
 }
