@@ -25,7 +25,6 @@ unsigned int scoreMatrix::score_matrix_index(char base)
   return (base == '-') ? score_matrix_dictionary[ 'N' ] : score_matrix_dictionary[ base ];
 }
 
-
 //Public methods
 
 void scoreMatrix::import_score_matrix( string file_path )

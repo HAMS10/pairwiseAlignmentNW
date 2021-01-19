@@ -10,8 +10,9 @@
 
 #include <vector>
 #include <limits>
-#include "../include/scoreMatrix/scoreMatrix.hpp"
-#include "../include/sequence/sequence.hpp"
+
+#include "../Include/scoreMatrix/scoreMatrix.hpp"
+#include "../Include/sequence/sequence.hpp"
 
 using namespace std;
 
