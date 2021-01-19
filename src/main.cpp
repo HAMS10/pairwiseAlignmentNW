@@ -15,7 +15,7 @@ int main()
   align.print_scoring_matrix();
   align.print_sequences();
   align.gaps_load(10, 0.1);
-  align.needleman_wunsch(0, 3);
+  align.needleman_wunsch(0, 4);
   align.print_matrices();
   align.print_sequences();
 

@@ -122,10 +122,10 @@ unsigned short int pairwiseAlignmentNW::find_traceback_direction( unsigned short
     case 3:
     case 5:
     case 7:
-      return 1;
+      return 0;
     case 2:
     case 6:
-      return 0;
+      return 1;
     case 0:
     case 4:
       return 2;
@@ -165,12 +165,12 @@ void pairwiseAlignmentNW::traceback(unsigned int& sequence0_index, unsigned int&
 
     if (column_index == 0)
     {
-      sequences[sequence1_index].insert(column_index,gap);
+      sequences[sequence1_index].insert(column_index, gap);
       row_index--;
     }
     else if (row_index == 0)
     {
-      sequences[sequence0_index].insert(row_index,gap);
+      sequences[sequence0_index].insert(row_index, gap);
       column_index--;
     }
     else
@@ -178,7 +178,7 @@ void pairwiseAlignmentNW::traceback(unsigned int& sequence0_index, unsigned int&
       if (path == 0)
       {
         if (row_index != row_size) {
-          sequences[sequence1_index].insert(column_index,gap);
+          sequences[sequence1_index].insert(column_index, gap);
         }
         else
           sequences[sequence1_index].append(gap);
@@ -187,7 +187,7 @@ void pairwiseAlignmentNW::traceback(unsigned int& sequence0_index, unsigned int&
       else if (path == 1) {
 
         if (column_index != column_size)
-          sequences[sequence0_index].insert(row_index,gap);
+          sequences[sequence0_index].insert(row_index, gap);
         else
           sequences[sequence0_index].append(gap);
         column_index--;
