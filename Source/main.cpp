@@ -10,8 +10,8 @@
 int main()
 {
   pairwiseAlignmentNW align;
-  align.import_score_matrix("data\\substitution_matrices\\NUC44");
-  align.import_sequences("data\\query\\msa.fasta");
+  align.import_score_matrix("Data/substitution_matrices/NUC44");
+  align.import_sequences("Data/query/msa.fasta");
   align.print_scoring_matrix();
   align.print_sequences();
   align.gaps_load(10, 1);
