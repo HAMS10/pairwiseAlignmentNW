@@ -32,7 +32,7 @@ void sequence::import_sequences( string file_path )
             is_first_line = true;
             sequence_index++;
           }
-          sequence_name.push_back(word);
+          sequences_name.push_back(word);
           break;
         }
         else
@@ -60,9 +60,9 @@ vector<string>& sequence::share_sequences()
   return sequences;
 }
 
-void sequence::print_sequences() {
-  for( unsigned int sequence_index = 0 ; sequence_index < sequence_name.size(); sequence_index++ ){
-    cout << sequence_name[sequence_index] << '\n';
+void sequence::print_input_sequences() {
+  for( unsigned int sequence_index = 0 ; sequence_index < sequences_name.size(); sequence_index++ ){
+    cout << sequences_name[sequence_index] << '\n';
     cout << sequences[sequence_index] << '\n';
   }
 }

@@ -22,11 +22,11 @@ using namespace std;
 class sequence {
 protected:
   vector<string> sequences;
-  vector<string> sequence_name;
+  vector<string> sequences_name;
 public:
   void import_sequences( string file_path );
   vector<string>& share_sequences();
-  void print_sequences();
+  void print_input_sequences();
 };
 
 #endif /* SEQUENCE_HPP_ */

@@ -37,3 +37,11 @@ void pairwiseAlignmentNW::print_matrices()
   cout << "Matrix Traceback" << '\n';
   print_vector_uint(traceback_paths);
 }
+
+void pairwiseAlignmentNW::print_output_pairwise()
+{
+	for( unsigned int sequence_index = 0 ; sequence_index < output_sequences.size(); sequence_index++ ){
+		cout << sequences_name[process_sequences_index[sequence_index]] << '\n';
+		cout << output_sequences[sequence_index] << '\n';
+	}
+}

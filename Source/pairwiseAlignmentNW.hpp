@@ -22,12 +22,15 @@ private:
 	//horizontal city array E
 	//vertical city array F
 	//diagonal city array H
+	const float minus_infinity = -numeric_limits<float>::infinity();
+	const string gap = "-";
+
 	vector<vector<float>> F, E, H;
 	vector<vector<unsigned short int>> traceback_paths;
 	float gap_opening, gap_extending;
 
-	const float minus_infinity = -numeric_limits<float>::infinity();
-	const string gap = "-";
+	vector<string> output_sequences;
+	vector<unsigned int> process_sequences_index;
 
 	void fill_matrices(unsigned int sequence0_index, unsigned int sequence1_index);
 	void fill_when_index_equal_zero(unsigned int &row_index, unsigned int &column_index);
@@ -44,6 +47,7 @@ private:
 public:
 	void gaps_load(float gop, float gep);
 	void needleman_wunsch(unsigned int sequence0_index, unsigned int sequence1_index);
+	void print_output_pairwise();
 	void print_matrices();
 
 };
