@@ -29,7 +29,7 @@ private:
 	vector<vector<unsigned short int>> traceback_paths;
 	float gap_opening, gap_extending;
 
-	vector<string> output_sequences;
+	vector<string> pairwise_output_sequences;
 	vector<unsigned int> process_sequences_index;
 
 	void fill_matrices(unsigned int sequence0_index, unsigned int sequence1_index);
