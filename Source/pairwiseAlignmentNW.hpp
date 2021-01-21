@@ -46,10 +46,9 @@ private:
 
 public:
 	void gaps_load(float gop, float gep);
-	void needleman_wunsch(unsigned int sequence_0_index, unsigned int sequence_1_index);
+	void needleman_wunsch(unsigned int& sequence_0_index, unsigned int& sequence_1_index);
 	void print_output_pairwise();
 	void print_matrices();
-
 };
 
 #endif /* PAIRWISEALIGNMENTNW_HPP_ */

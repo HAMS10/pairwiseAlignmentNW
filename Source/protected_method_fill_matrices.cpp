@@ -86,12 +86,12 @@ void pairwiseAlignmentNW::fill_when_index_non_zero(unsigned int& row_index, unsi
 
   matrix_values_2_compare =
   {
-    F[row_index][column_index],
-    E[row_index][column_index],
-    H[row_index - 1][column_index - 1]  +  comparison_score( pairwise_output_sequences[0][row_index - 1], pairwise_output_sequences[1][column_index - 1])
+    F[row_index - 1][column_index - 1],
+    E[row_index - 1][column_index - 1],
+    H[row_index - 1][column_index - 1]
   };
-
-  H[row_index][column_index] = find_max_value_of( matrix_values_2_compare );
+  H[row_index][column_index] = comparison_score( pairwise_output_sequences[0][row_index - 1], pairwise_output_sequences[1][column_index - 1]);
+  H[row_index][column_index] += find_max_value_of( matrix_values_2_compare );
 
   traceback_paths[row_index][column_index] = find_traceback_paths( matrix_values_2_compare, H[row_index][column_index] );
 }
@@ -108,8 +108,8 @@ unsigned short int pairwiseAlignmentNW::find_traceback_paths( vector<float>& com
 
   for (size_t value_index = 0; value_index < compare_values.size(); value_index++) {
 
-    if (compare_values[value_index] == max) {
-
+    if (compare_values[value_index] == max)
+    {
       if (value_index == 0 )
         traceback_values = 1;
       else
