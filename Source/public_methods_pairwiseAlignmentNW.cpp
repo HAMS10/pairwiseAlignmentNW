@@ -20,10 +20,12 @@ void pairwiseAlignmentNW::gaps_load( float gop, float gep )
 	gap_extending = gep;
 }
 
-void pairwiseAlignmentNW::needleman_wunsch( unsigned int sequence0_index, unsigned int sequence1_index )
+void pairwiseAlignmentNW::needleman_wunsch(unsigned int sequence_0_index, unsigned int sequence_1_index)
 {
-  fill_matrices(sequence0_index, sequence1_index);
-  traceback(sequence0_index, sequence1_index);
+	pairwise_output_sequences = {sequences[sequence_0_index], sequences[sequence_1_index]};
+	process_sequences_index ={sequence_0_index, sequence_1_index};
+	fill_matrices();
+	traceback();
 }
 
 void pairwiseAlignmentNW::print_matrices()

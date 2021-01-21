@@ -32,21 +32,21 @@ private:
 	vector<string> pairwise_output_sequences;
 	vector<unsigned int> process_sequences_index;
 
-	void fill_matrices(unsigned int sequence0_index, unsigned int sequence1_index);
+	void fill_matrices();
 	void fill_when_index_equal_zero(unsigned int &row_index, unsigned int &column_index);
-	void fill_when_index_non_zero(unsigned int &sequence0_index, unsigned int &sequence1_index, unsigned int &row_index, unsigned int &column_index);
+	void fill_when_index_non_zero(unsigned int &row_index, unsigned int &column_index);
 	float find_max_value_of(vector<float> compare_values);
 	unsigned short int find_traceback_paths(vector<float> &compare_values, float &max);
 	unsigned short int find_traceback_direction(unsigned short int &traceback_value);
-	void traceback(unsigned int &sequence0_index, unsigned int &sequence1_index);
-	void insert_gap_in_sequence_when_any_index_is_zero(unsigned int &sequence0_index, unsigned int &sequence1_index, unsigned int &row_index, unsigned int &column_index);
+	void traceback();
+	void insert_gap_in_sequence_when_any_index_is_zero(unsigned int &row_index, unsigned int &column_index);
 	void insert_gap_in_sequence_index(unsigned int &sequence_index, unsigned int &row_or_column_index, unsigned int &row_or_column_size);
 	void print_vector_float(vector<vector<float>> &data_matrix);
 	void print_vector_uint(vector<vector<unsigned short int>> &data_matrix);
 
 public:
 	void gaps_load(float gop, float gep);
-	void needleman_wunsch(unsigned int sequence0_index, unsigned int sequence1_index);
+	void needleman_wunsch(unsigned int sequence_0_index, unsigned int sequence_1_index);
 	void print_output_pairwise();
 	void print_matrices();
 

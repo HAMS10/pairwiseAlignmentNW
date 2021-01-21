@@ -13,11 +13,12 @@ int main()
   align.import_score_matrix("Data/substitution_matrices/NUC44");
   align.import_sequences("Data/query/msa.fasta");
   align.print_scoring_matrix();
-  align.print_input_sequences();
   align.gaps_load(10, 1);
-  int a = 0, b = 4;
+  unsigned int a = 0, b = 4;
   align.needleman_wunsch(a, b);
   align.print_matrices();
+  align.print_input_sequences();
+  align.print_output_pairwise();
 
 
   return 0;
