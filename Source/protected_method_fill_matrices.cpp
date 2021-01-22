@@ -123,14 +123,16 @@ unsigned short int pairwiseAlignmentNW::find_traceback_paths( vector<float>& com
 
 unsigned short int pairwiseAlignmentNW::find_traceback_direction( unsigned short int& traceback_value)
 {
-  // value 0 left | value 1 up | value 2 diagonal
+  // value 0 up | value 1 left | value 2 diagonal
   switch (traceback_value) {
     case 1:
+      return 0;
     case 3:
     case 5:
     case 7:
       return 0;
     case 2:
+      return 1;
     case 6:
       return 1;
     case 0:
